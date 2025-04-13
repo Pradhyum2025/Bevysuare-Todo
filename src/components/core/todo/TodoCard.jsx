@@ -8,7 +8,7 @@ export default function TodoCard({ todo }) {
   const descRef = useRef(null)
  
   useEffect(()=>{
-    descRef.current.innerHTML = (((todo?.description && todo.description.length>40)?todo.description?.substring(0,30):todo.description) || 'Write your todo description here');
+    descRef.current.innerHTML = (((todo?.description && todo.description.length>40)?todo.description?.substring(0,30):todo.description) || 'Write todo description');
   },[todo])
   
   return (
