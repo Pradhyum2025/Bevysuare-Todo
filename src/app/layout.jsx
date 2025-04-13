@@ -5,6 +5,9 @@ import { Toaster } from "react-hot-toast";
 import Providers from "@/components/core/todo/Providers";
 import NewTodoBtn from "@/components/core/todo/NewTodoBtn";
 import TodosListing from "@/components/core/todo/TodosListing";
+import { Poppins } from "next/font/google";
+import LeftContainer from "@/components/core/todo/LeftContainer";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,33 +19,33 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const poppins = Poppins({
+  weight: ['400', '500', '600','700','800'], 
+  subsets: ['latin'],
+  variable: '--font-poppins', 
+});
+
 export const metadata = {
   title: "Bavysquare Todo",
   description: "Bavysquare Assignment Todo",
 };
 
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={` ${poppins.variable} antialiased`}
         >
         <Header/>
         <Toaster/>
         <Providers>
-           <div className="flex justify-around items-start bg-gray-100 min-h-[90vh] flex-col md:flex-row py-10" >
+           <div className="flex justify-around items-start bg-gray-100  flex-col md:flex-row py-10" >
                 {/* section1 -- left */}
-                <section className="w-[100%] sm:w-[40%]  p-4 lg:px-10 flex flex-col gap-5">
-          
-                  {/* Btn and Search */}
-                 <NewTodoBtn/>
-                  {/* All todo Lists */}
-                  <TodosListing/>
-          
-                </section>
+              <LeftContainer/>
 
                 {/* section2  ---right */}
-                <section className="w-full sm:w-[50%] h-full p-4 mt-15 lg:px-10">
+                <section className="w-full sm:w-[50%] h-[80vh] sm:h-[70vh] lg:px-10  flex flex-col sm:pt-8  px-4 sm:justify-center items-center sticky top-20">
                   {/* show todo */}
                 {children}
                 </section>

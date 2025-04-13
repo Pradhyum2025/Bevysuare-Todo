@@ -16,7 +16,7 @@ export default function NewTodoBtn() {
     <div
 
     // Create new todo
-      className="flex justify-between items-center w-full" >
+      className="flex justify-between items-center w-full sm:px-2" >
       <button
       onClick={handleCreateNewTodo}
        className="bg-gray-900 w-[100px] h-[48px] rounded-[8px] text-white flex items-center gap-[8px] justify-center cursor-pointer">

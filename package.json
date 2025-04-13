@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/font": "^14.2.15",
     "@reduxjs/toolkit": "^2.6.1",
     "@tiptap/react": "^2.11.7",
     "@tiptap/starter-kit": "^2.11.7",

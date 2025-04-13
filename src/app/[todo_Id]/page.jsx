@@ -9,16 +9,14 @@ export default async function todoDetailPage({ params }) {
   const singleTodo = await getSingleTodo(todo_Id);
   return (
     <>
-      <div className='rounded sm:hidden max-w-4xl mx-auto relative'>
-        <Link href={'/'}>
-          <button className=" w-[100px] h-[48px]  text-gray-900 flex items-center gap-[8px] justify-center cursor-pointer">
+        <Link href={'/'} className='w-full mb-2 sm:hidden '>
+          <button className="text-gray-900 flex items-center gap-[8px] justify-start cursor-pointer">
             <BiArrowBack className='text-gray-900 font-[800] hover:-translate-x-[5px] duration-200 delay-10' />
             <span className='font-[600] text-lg'>
               Back
             </span>
           </button>
         </Link>
-      </div>
 
       <NoteEditor todo={singleTodo} />
     </>
