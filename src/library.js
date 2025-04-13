@@ -1,4 +1,4 @@
-import toast from "react-hot-toast";
+import { toast } from 'react-hot-toast';
 import axiosInstance from "./helper/axiosInstance";
 import { todoSliceAction } from "./redux/slices/todoSlice";
 
